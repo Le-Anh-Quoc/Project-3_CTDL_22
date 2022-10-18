@@ -65,6 +65,7 @@ bool Sach::operator != (Sach s)
 istream& operator >> (istream& in, Sach& s)
 {
 	in >> s.masach;
+	cin.ignore();
 	getline(in, s.tensach);
 	getline(in, s.tacgia);
 	getline(in, s.nhaxuatban);
