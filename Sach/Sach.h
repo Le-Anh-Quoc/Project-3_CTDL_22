@@ -70,5 +70,6 @@ public:
 	void hienThiThongTinSach();
 	void themSach(Sach data);
 	void xoaSach(Sach data);
+	//ádasdhds
 };
 
