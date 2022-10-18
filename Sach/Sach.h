@@ -49,7 +49,7 @@ public:
 class LinkedList;
 
 class Node {
-	friend LinkedList;
+	friend LinkedList;		//cho Linkedlist lam ban voi Node
 private:
 	Sach _data;				//chứa dữ liệu kiểu Sach
 	Node* _pNext;     //đây là con trỏ dùng để liên kết các node với nhau
