@@ -67,9 +67,8 @@ public:
 	LinkedList();
 	~LinkedList();
 
-	void hienThiThongTinSach();
-	void themSach(Sach data);
-	void xoaSach(Sach data);
-	//ádasdhds
+	void hienThiThongTinSach();     //in ra tất cả sách đang có
+	void themSach(Sach data);		//thêm một sách vào đầu danh sách
+	void xoaSach(Sach data);		//xóa một sách với masach bat ki
 };
 
