@@ -64,23 +64,11 @@ bool Sach::operator != (Sach s)
 
 istream& operator >> (istream& in, Sach& s)
 {
-	getline(in, s.masach, ',');
-	in.seekg(1, 1);
-	getline(in, s.tensach, ',');
-	in.seekg(1, 1);
-	getline(in, s.tacgia, ',');
-	in.seekg(1, 1);
-	getline(in, s.nhaxuatban, ',');
-	in.seekg(1, 1);
-	in >> s.giaban;
-	in.seekg(2, 1);
-	getline(in, s.namphathanh, ',');
-	in.seekg(1, 1);
-	in >> s.sotrang;
-	in.seekg(2, 1);
-	getline(in, s.ngaynhapkho, ',');
-	in.seekg(1, 1);
-	in >> s.tinhtrangsach;
+	in >> s.masach;
+	getline(in, s.tensach);
+	getline(in, s.tacgia);
+	getline(in, s.nhaxuatban);
+	in >> s.giaban >> s.namphathanh >> s.sotrang >> s.ngaynhapkho >> s.tinhtrangsach;
 	return in;
 }
 ostream& operator << (ostream& out, Sach s)

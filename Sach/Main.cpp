@@ -2,10 +2,18 @@
 //
 
 #include <iostream>
+#include"Sach.h";
+#include "Sach.cpp"
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	//Sach s;
+	//ifstream filein;
+	//cin >> s;
+	//cout << s;
+	//filein.open("test.txt");
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
