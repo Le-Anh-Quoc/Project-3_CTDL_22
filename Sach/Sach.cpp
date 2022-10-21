@@ -49,11 +49,6 @@ Sach::Sach(const Sach& s)
 }
 Sach::~Sach() {}
 
-void Sach::doc_1_quyen_sach(ifstream& filein, Sach& s)
-{
-	filein >> s;
-}
-
 bool Sach::operator != (Sach s)
 {
 	if (masach == s.masach) {
@@ -80,64 +75,62 @@ ostream& operator << (ostream& out, Sach s)
 }
 
 //định nghĩa các phương thức của Node
-Node::Node(Sach data)
+Node::Node(Sach _item)
 {
-	_data = data;
-	_pNext = NULL;
+	item = _item;
+	pNext = NULL;
 }
 void Node::display()
 {
-	cout << _data;
+	cout << item;
 }
+
 
 //định nghĩa các phương thức của LinkedList
 LinkedList::LinkedList()
 {
-	_pHead = NULL;
-	_pTail = NULL;
-	_size = 0;
+	pHead = NULL;
+	pTail = NULL;
 }
 LinkedList::~LinkedList(){}
 void LinkedList::hienThiThongTinSach()
 {
-	Node* pWalker = _pHead;
-	while (pWalker != NULL) 
+	Node* p = pHead;
+	while (p != NULL) 
 	{
-		pWalker->display();
-		pWalker = pWalker->_pNext;
+		p->display();
+		p = p->pNext;
 	}
 }
-void LinkedList::themSach(Sach data)
+void LinkedList::themSach(Sach _item)
 {
-	Node* pAdd = new Node(data);
-	if (_pHead == NULL)
+	Node* pAdd = new Node(_item);
+	if (pHead == NULL)
 	{
-		_pHead = _pTail = pAdd;
+		pHead = pTail = pAdd;
 	}
 	else {
-		pAdd->_pNext = _pHead;
-		_pHead = pAdd;
+		pAdd->pNext = pHead;
+		pHead = pAdd;
 	}
-	_size++;
 }
-void LinkedList::xoaSach(Sach data)
+void LinkedList::xoaSach(Sach _item)
 {
-	Node* pWalker = _pHead, * pTemp = NULL;
-	while ((pWalker != NULL) && (pWalker->_data != data))
+	Node* p = pHead, * pTemp = NULL;
+	while ((p != NULL) && (p->item != _item))
 	{
-		pTemp = pWalker;
-		pWalker = pWalker->_pNext;
+		pTemp = p;
+		p = p->pNext;
 	}
-	if (pWalker == NULL) return;
+	if (p == NULL) return;
 	if (pTemp != NULL)
 	{
-		if (pWalker == _pTail) 
+		if (p == pTail) 
 		{
-			_pTail = pTemp;
-			_pTail->_pNext = NULL;
+			pTail = pTemp;
+			pTail->pNext = NULL;
 		}
-		pTemp->_pNext = pWalker->_pNext;
-		delete pWalker;
+		pTemp->pNext = p->pNext;
+		delete p;
 	}
-	_size--;
 }

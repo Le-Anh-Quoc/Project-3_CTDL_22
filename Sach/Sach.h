@@ -37,8 +37,6 @@ public:
 	friend istream& operator >> (istream& in, Sach& s);    //nhập sách
 	friend ostream& operator << (ostream& out, Sach s);	   //xuất sách
 
-	void doc_1_quyen_sach(ifstream& filein, Sach& s);
-
 	bool operator != (Sach s);
 };
 
@@ -51,24 +49,25 @@ class LinkedList;
 class Node {
 	friend LinkedList;		//cho Linkedlist lam ban voi Node
 private:
-	Sach _data;				//chứa dữ liệu kiểu Sach
-	Node* _pNext;     //đây là con trỏ dùng để liên kết các node với nhau
+	Sach item;				//chứa dữ liệu kiểu Sach
+	Node* pNext;     //đây là con trỏ dùng để liên kết các node với nhau
 public:
-	Node(Sach data);
+	Node(Sach _item);
 	void display();
 };
 
 //khai báo cấu trúc danh sách liên kết đơn
 class LinkedList {
-	Node* _pHead;			//node quản lý đầu danh sách
-	Node* _pTail;			//node quản lý cuối danh sách
-	int _size;
+	Node* pHead;			//node quản lý đầu danh sách
+	Node* pTail;			//node quản lý cuối danh sách
 public:
 	LinkedList();
 	~LinkedList();
 
+	void doc_1_quyen_sach(ifstream& filein, Sach& s);
+
 	void hienThiThongTinSach();     //in ra tất cả sách đang có
-	void themSach(Sach data);		//thêm một sách vào đầu danh sách
-	void xoaSach(Sach data);		//xóa một sách với masach bat ki
+	void themSach(Sach _item);		//thêm một sách vào đầu danh sách
+	void xoaSach(Sach _item);		//xóa một sách với masach bat ki
 };
 

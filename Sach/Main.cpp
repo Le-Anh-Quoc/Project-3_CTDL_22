@@ -1,18 +1,15 @@
 // Sach.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include<iostream>
 #include"Sach.h"
-
 
 int main()
 {
+	ifstream f;
 	Sach s;
-	//ifstream filein;
-	cin >> s;
+	f.open("test.txt");
 	cout << s;
-	//filein.open("test.txt");
-
+	f.close();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
