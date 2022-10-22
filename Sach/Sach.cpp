@@ -49,6 +49,16 @@ Sach::Sach(const Sach& s)
 }
 Sach::~Sach() {}
 
+void Sach::doc_1_quyen_sach(ifstream& filein)
+{
+	filein >> masach;
+	filein.ignore();
+	getline(filein, tensach);
+	getline(filein, tacgia);
+	getline(filein, nhaxuatban);
+	filein >> giaban >> namphathanh >> sotrang >> ngaynhapkho >> tinhtrangsach;
+}
+
 bool Sach::operator != (Sach s)
 {
 	if (masach == s.masach) {
@@ -134,3 +144,13 @@ void LinkedList::xoaSach(Sach _item)
 		delete p;
 	}
 }
+
+//void LinkedList::doc_danh_sach_quyen_sach(ifstream& filein)
+//{
+//	while (!filein.eof()) {
+//		Sach s;
+//		s.doc_1_quyen_sach(filein);
+//		Node* p = new Node(s);
+//		themSach(p);
+//	}
+//}

@@ -5,11 +5,18 @@
 
 int main()
 {
-	ifstream f;
 	Sach s;
-	f.open("test.txt");
+	int a, b;
+	ifstream filein;
+	filein.open("D:/test.txt");
+	if (filein.is_open()) {
+		s.doc_1_quyen_sach(filein);
+		filein.close();
+	}
+	else {
+		cout << "khong mo duoc file" << endl;
+	}
 	cout << s;
-	f.close();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

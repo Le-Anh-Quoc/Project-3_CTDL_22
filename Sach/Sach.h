@@ -6,6 +6,7 @@ using namespace std;
 
 // khai báo đối tượng sách
 class Sach {
+public:
 	string masach, tensach, tacgia, nhaxuatban, namphathanh, ngaynhapkho;
 	long giaban;
 	short sotrang, tinhtrangsach;
@@ -37,6 +38,7 @@ public:
 	friend istream& operator >> (istream& in, Sach& s);    //nhập sách
 	friend ostream& operator << (ostream& out, Sach s);	   //xuất sách
 
+	void doc_1_quyen_sach(ifstream& filein);
 	bool operator != (Sach s);
 };
 
@@ -64,10 +66,10 @@ public:
 	LinkedList();
 	~LinkedList();
 
-	void doc_1_quyen_sach(ifstream& filein, Sach& s);
-
 	void hienThiThongTinSach();     //in ra tất cả sách đang có
 	void themSach(Sach _item);		//thêm một sách vào đầu danh sách
 	void xoaSach(Sach _item);		//xóa một sách với masach bat ki
+
+	void doc_danh_sach_quyen_sach(ifstream& filein);
 };
 
