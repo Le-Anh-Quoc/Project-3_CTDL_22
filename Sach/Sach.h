@@ -2,16 +2,14 @@
 #include<iostream>
 #include<string>     //sử dụng để đọc kiểu dữ liệu chuỗi (có khoảng trắng)
 #include<fstream>	 //sử dụng để nhập xuất dữ liệu từ file
+#include<iomanip>	//su dung cho setw
 using namespace std;
 
 // khai báo đối tượng sách
 class Sach {
+	string masach, tensach, tacgia, nhaxuatban, giaban, namphathanh, sotrang, ngaynhapkho, tinhtrangsach;
 public:
-	string masach, tensach, tacgia, nhaxuatban, namphathanh, ngaynhapkho;
-	long giaban;
-	short sotrang, tinhtrangsach;
-public:
-	string getMasach();
+	/*string getMasach();
 	string getTensach();
 	string getTacgia();
 	string getNhaxuatban();
@@ -29,17 +27,28 @@ public:
 	void setNgaynhapkho(string _ngaynhapkho);
 	void setGiaban(long _giaban);
 	void setSotrang(short _sotrang);
-	void setTinhtrangsach(short _tinhtrangsach);
+	void setTinhtrangsach(short _tinhtrangsach);*/
 
-	Sach(string _masach = "", string _tensach = "", string _tacgia = "", string _nhaxuatban = "", long _giaban = 0, string _namphathanh = "", short _sotrang = 0, string _ngaynhapkho = "", short _tinhtrangsach = 0);
+	Sach(string _masach = "", string _tensach = "", string _tacgia = "", string _nhaxuatban = "", string _giaban = "", string _namphathanh = "", string _sotrang = "", string _ngaynhapkho = "", string _tinhtrangsach = "");
 	Sach(const Sach& s);
 	~Sach();
 
-	friend istream& operator >> (istream& in, Sach& s);    //nhập sách
-	friend ostream& operator << (ostream& out, Sach s);	   //xuất sách
+	void themSach(Sach& s);
+	void cap_nhat_sach(Sach arr[1000], int& n);
+	void xoaSach(Sach arr[1000], int& n);
+	int TimSach(Sach arr[1000], int sl, string id);
 
-	void doc_1_quyen_sach(ifstream& filein);
-	bool operator != (Sach s);
+	void xuattitle();
+	void xuat();
+	void getlist(Sach arr[1000], int& sl);
+	void ttsach(Sach arr[1000], int sl, string id, string cd);
+
+
+	//friend istream& operator >> (istream& in, Sach& s);    //nhập sách
+	//friend ostream& operator << (ostream& out, Sach s);	   //xuất sách
+
+	//void doc_1_quyen_sach(ifstream& filein);
+	//bool operator != (Sach s);
 };
 
 
@@ -70,6 +79,6 @@ public:
 	void themSach(Sach _item);		//thêm một sách vào đầu danh sách
 	void xoaSach(Sach _item);		//xóa một sách với masach bat ki
 
-	void doc_danh_sach_quyen_sach(ifstream& filein);
+	void doc_danh_sach_quyen_sach(ifstream& filein); //sadasdasdasdasdasdasdasdsadasdasdasdas
 };
 

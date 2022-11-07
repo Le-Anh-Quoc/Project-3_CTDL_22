@@ -5,7 +5,7 @@
 
 int main()
 {
-	Sach s;
+	/*Sach s;
 	int a, b;
 	ifstream filein;
 	filein.open("D:/test.txt");
@@ -16,7 +16,7 @@ int main()
 	else {
 		cout << "khong mo duoc file" << endl;
 	}
-	cout << s;
+	cout << s;*/
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

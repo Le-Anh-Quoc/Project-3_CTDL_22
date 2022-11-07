@@ -21,9 +21,27 @@
     <ClCompile Include="Sach.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="Bandoc.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Phieumuon.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hienthi.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sach.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Phieumuon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hienthi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
